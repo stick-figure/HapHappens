@@ -1,0 +1,869 @@
+<html>
+  <head>
+    <title>Jokes - HapHappens | A place where happiness happens</title>
+    
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Chewy');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,900;1,900&display=swap');
+    </style>
+    
+    <style>
+      * {
+        font-family: "Chewy", "Comic Sans MS", "Comic Sans", cursive;
+      }
+      
+      body, html {
+        height: 100%;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        background-color: white;
+      }
+      
+      h1#mainHeader {
+        display: inline-block;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        position: absolute;
+        
+        top: calc(0.5em + 4px);
+        left: 32px;
+        
+        font-size: 3em;
+        font-family: "Fira Sans", fantasy;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+      
+      h3#mainSubHeader {
+        display: inline-block;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        position: absolute;
+        
+        bottom: 1.5em;
+        right: 32px;
+        
+        letter-spacing: 0.1em;
+      }
+      
+      .to_index {
+        color: black;
+        
+        text-decoration: none;
+      }
+      
+      div.jumbotron {
+        height: 7.5em;
+        
+        padding: 4px;
+        
+        position: relative;
+        
+        background-color: #EFEFEF;
+        
+        border-bottom: 8px solid black;
+      }
+      
+      div.container.nav {
+        position: relative;
+        
+        top: calc(-0.5em - 18px);
+      }
+      
+      ul.nav {
+        margin: 0px;
+        padding: 0px;
+        
+        overflow: hidden;
+        
+        text-align: center;
+        
+        list-style-type: none;
+      }
+      
+      li.nav {
+        display: inline-block;
+        width: calc(20% - 32px);
+      }
+      
+      li.nav a {
+        display: inline-block;
+        
+        width: 75%;
+        
+        margin: 0px;
+        padding: 8px;
+        
+        background-color: #FADE42;
+        color: black;
+        
+        text-align: center;
+        
+        text-decoration: none;
+        
+        border: 3px solid black;
+      }
+      
+      li.nav a.current {
+        background-color: #D8BC20;
+      }
+      
+      .nav.pics {
+        display: none;
+      }
+      
+      li.nav a:active {
+        background-color: #E9CD31;
+      }
+      
+      li.nav a:hover {
+        background-color: #FEED53;
+      }
+      
+      div.caption {
+        width: fit-content;
+        
+        margin: 4px 4px 4px 4px;
+        padding: 8px 8px 8px 8px;
+        
+        position: relative;
+        
+        background-color: #FADE42;
+        
+        text-align: default;
+        
+        box-shadow: 4px 4px;
+        border: 2px solid;
+      }
+      
+      .caption.asdf {
+        top: -100px;
+      }
+      
+      .left {float: left;}
+      .right {float: right;}
+      
+      div.header {
+        width: 55%;
+        
+        background-color: #FADE42;
+        
+        font-size: 1.25em;
+        
+        box-shadow: 4px 4px;
+        border: 2px solid;
+      }
+      
+      .container.dashboard {
+        width: 100%;
+      }
+      
+      .container.messages {
+        width: 100%;
+        height: 50vh;
+        
+        overflow-x: hidden;
+        overflow-y: scroll;
+        
+        background-color: white;
+      }
+      
+      .message.cell {
+        width: 80%;
+        
+        padding: 4px;
+        margin: 4px;
+        
+        animation-fill-mode: both;
+      }
+      
+      .message.cell.left {
+        float: left;
+        
+        background-color: #ededed;
+        
+        border: 2px solid #dedede;
+        border-radius: 6px;
+        
+        animation-name: messageCellLeft;
+        animation-duration: 1s;
+      }
+      
+      .message.cell.right {
+        float: right;
+        
+        background-color: #dddddd;
+        
+        border: 2px solid #c3c3c3;
+        border-radius: 6px;
+        
+        animation-name: messageCellRight;
+        animation-duration: 1s;
+      }
+      
+      .message.content {
+        color: #070707;
+        
+        overflow-wrap: break-word;
+      }
+      
+      .message.timestamp {
+        position: absolute;
+        
+        bottom: 4px;
+        
+        color: #555555;
+        
+        font-size: 0.8em;
+      }
+      
+      .message.timestamp.left {
+        right: 4px;
+        
+        background-color: #edededab;
+      }
+      
+      .message.timestamp.right {
+        left: 4px;
+        
+        background-color: #ddddddab;
+      }
+      
+      .message.pfp {
+        width: 50px;
+        height: 50px;
+        
+        margin: 4px;
+        padding: 4px;
+        
+        border-radius: 100%;
+      }
+      
+      .message.pfp.left {float: left;}
+      .message.pfp.right {float: right;}
+      
+      #userInputInput {
+        float: left;
+        
+        width: calc(80% - 8px);
+      }
+      
+      #sendMessage {
+        float: right;
+        
+        width: calc(20% - 8px);
+        
+        background-color: #FADE42;
+        
+        border: solid 3px black;
+        border-radius: 0px;
+      }
+      
+      @keyframes messageCellLeft {
+        0% {
+          transform: translate3d(-120%, 0px, 0px);
+        }
+        100% {
+          transform: translate3d(0px, 0px, 0px);
+        }
+      }
+      
+      @keyframes messageCellRight {
+        0% {
+          transform: translate3d(120%, 0px, 0px);
+        }
+        100% {
+          transform: translate3d(0px, 0px, 0px);
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container content">
+      <div class="container jumbotron">
+        <a class="to_index" href="index.html">
+          <h1 id="mainHeader"   >HapHappens</h1>
+          <h3 id="mainSubHeader">A place where happiness happens</h3>
+        </a>
+      </div>
+      
+      <div class="container nav">
+        <ul class="nav">
+          <li class="nav news"  ><a href="news.html"  >news</a>  </li>
+          <li class="nav pics"  ><a href="pics.html"  >pics</a>  </li>
+          <li class="nav jokes" ><a class="current" href="jokes.html" >jokes</a> </li>
+          <li class="nav events"><a href="events.html">events</a></li>
+          <li class="nav about" ><a href="about.html" >about </a></li>
+        </ul>
+      </div>
+      <div class="container dashboard">
+        <div class="container messages">
+          
+        </div>
+        <br />
+        <div class="container u_input">
+          <form id="userInput">
+            <input type="text" id="userInputInput" name="uInput" placeholder="Say something..." maxlength="2000" />
+            <button id="sendMessage" tabindex="0">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script>
+      var jokeText = `Hey, guess the new word I invented: 
+Plagiarism! Do you like it? 
+plagiarism
+
+Did you hear about the mathematician who's afraid of negative numbers? 
+He'll stop at nothing to avoid them. 
+stop at nothing
+
+Yesterday I saw a guy spill all his Scrabble letters on the road. 
+I asked him, \"What's the word on the street?\"
+word on the street|word on street|word street
+
+A woman in labor suddenly shouted, \"Shouldn't! Wouldn't! Couldn't! Didn't! Can't!\" 
+\"Don't worry,\" said the doc. \"Those are just contractions.\" 
+contractions|just contractions
+
+Did you hear about the actor who fell through the floorboards? 
+He was just going through a stage.
+going through stage|through a stage
+
+Did you hear about the claustrophobic astronaut? 
+He just needed a little space. 
+needed space|a little space|some space|needed a little space|need space
+
+What sits at the bottom of the sea and twitches? 
+A nervous wreck. 
+nervous wreck
+
+Why can't you explain puns to kleptomaniacs? 
+They always take things literally. 
+take things literally
+
+How do you keep a bagel from getting away? 
+Put lox on it. 
+lox|put lox|put a lox
+
+A man tells his doctor, \"Doc, help me. I'm addicted to Twitter!\" 
+The doctor replies, \"Sorry, I don't follow you...\"
+don't follow|dont follow
+
+What kind of exercise do lazy people do? 
+Diddly-squats.
+diddly squats|diddly-squats
+
+Last night, I slept like a baby. 
+I woke up three times, wet myself twice, and cried myself back to sleep. 
+woke up wet myself and cried back to sleep|woke up wet myself cried|woke up, wet myself, cried
+
+Our family has a genetic predisposition to diarrhea. 
+It runs in our jeans 
+runs in our jeans|runs in jeans|runs in genes|runs in our genes
+
+Our grandmother was a very cultivated lady. 
+She was born in a greenhouse. 
+born in a greenhouse|born in greenhouse
+
+What's a pirate's favorite letter of the alphabet? 
+ARRRRGH! 
+argh|arrgh|arrrgh|arrrrgh|arrrrrgh|arrrrrrgh
+
+Who's the queen of the pencil case? 
+The ruler. 
+ruler|the ruler
+
+What time do you go to the dentist? 
+Tooth-hurty 
+tooth hurty|tooth-hurty
+
+How do you make a tissue dance? 
+You put a little boogie in it. 
+little boogie
+
+What did the nose say to the finger? 
+\"Quit picking on me!\" 
+stop picking on me|quit picking on me
+
+What did the left eye say to the right eye? 
+\"Between us, somethings smells.\" 
+between us something smells|between us, something smells 
+
+What time is it when the clock strikes 13? 
+Time to get a new clock. 
+time to get a new clock|time to find a new clock|time to buy a new clock
+
+How do we know that the ocean is friendly? 
+It waves! 
+it waves
+
+What is a tornado's favorite game to play? 
+Twister 
+twister
+
+What falls in winter but never gets hurt? 
+Snow! 
+snow|sleet|hail
+
+When does a joke become a \"dad\" joke? 
+When the punchline is a parent.
+becomes a parent|becomes aparent|is a parent|is aparent
+
+How do you stop an astronaut's baby from crying? 
+You rocket! 
+rocket|rockit|rock it
+
+Why couldn't the astronaut book a hotel on the moon? 
+Because it was full. 
+it was full
+
+How does the moon cut his hair? 
+Eclipse it. 
+eclipse it
+
+What did the man say when he walked into a bar? 
+\"Ouch!\" 
+ouch|augh|oof
+
+What has four wheels and flies? 
+A garbage truck. 
+garbage truck
+
+How do you throw a party in space? 
+You planet. 
+planet
+
+What are the strongest days of the week? 
+Saturday and Sunday. Every other day is a weak day.
+saturday and sunday|saturday & sunday
+
+Why are pirates, pirates? 
+Because they just arrrrgh! 
+they just arrrrgh|they just argh|they just arrgh|they just arrrgh|they just arrrrrgh|they just arrrrrrgh
+
+Why did the kid bring a ladder to school? 
+Because she wanted to go to high school. 
+to go to high school|to get to high school
+
+Why couldn't the pirate learn the alphabet?
+Because he was always lost at \"c.\"
+lost at c|stuck at c|confused at c
+
+What building in New York has the most stories?
+The public library.
+public library
+
+Why didn't the dog want to play football?
+It was a boxer!
+it was a boxer|it is a boxer
+
+What gets wetter the more it dries?
+A towel.
+towel
+
+What's brown, has no legs, but has a head and a tail?
+A penny.
+penny|$0.01
+
+What did the book put on when it was cold?
+A jacket.
+jacket
+
+How did the phone propose to its girlfriend?
+It gave her a ring.
+gave her a ring
+
+What do you call an older snow man?
+Water
+water h2o
+
+What did one snow man call the other snow man?
+you're cool
+you're cool|you are cool|you cool
+
+Why was the broom late?
+It over swept
+over swept|over-swept
+
+What can you catch but never throw?
+a cold
+cold|disease|fever
+
+What did the baseball glove say to the ball?
+catch you later
+catch you later|catch u later|catch u l8r
+
+What is harder to catch the faster you run?
+Your breath
+breath
+
+Why is six afraid of seven?
+Because seven ate nine
+seven ate nine|seven eight nine
+
+What did the zero say to number eight?
+\"Nice belt!\"
+nice belt
+
+What did the triangle say to the circle?
+\"You're pointess.\"
+you are pointless|you're pointless
+
+What do you call cheese that isn't yours?
+Nacho cheese
+nacho cheese
+
+What time is it when an elephant sits on your fence?
+time to get a new fence
+new fence
+
+How many tickles does it take to make an octopus laugh?
+ten-tickles!
+ten tickles|ten-tickles|tentacles
+
+Why couldn't the bicycle stand up by itself?
+It was two-tired.
+two tired|two-tired
+
+Why don't ants get sick?
+Because they have anty-bodies!
+anty bodies|anty-bodies
+
+What do I do when spring arrives?
+I wet my plants!
+wet my plants|wet the plants|wet your plants
+
+My dentist is the best, do you know why?
+He has a little plaque!
+little plaque
+
+What did the fish say when he swam into a wall?
+dam!
+dam
+
+Why don't eggs tell jokes?
+they crack each other up
+crack each other up
+
+I ate a clock yesterday, but guess why I didn't like it.
+It was so time-consuming!
+time consuming|time-consuming
+
+How did I get such a large circumference?
+I ate too much pi!
+ate too much pi|ate too much pie
+
+What is the witch's favorite subject in school?
+Spelling!
+spelling
+
+What day of the week are most twins born?
+Twos-day.
+twos day|twosday|twos-day
+
+Why does the snowman wear sunglasses?
+To look cool.
+to look cool|to be cool|to seem cool
+
+What happened when two silk worms had a race?
+they ended up in a tie!
+end up in a tie|ended up in a tie|it was a tie
+
+What do football players eat when their thirsty?
+a soup-erbowl!
+souperbowl|superbowl|soup-erbowl|soup-er-bowl
+
+What did the patient say when he was in a hospital?
+ICU
+icu
+
+What do bats do when they fight?
+they bat-tle!
+battle|bat tle|bat-tle
+
+We lost an hour of sleep last night.
+well, can we go find it?
+
+
+What did the Zen Buddist say to the hotdog vendor?
+Make me one with everything.
+one with everything
+
+Have you heard the rumor going around about butter?
+Never mind, I shouldn't spread it.
+shouldn't spread it|should not spread it
+
+I was an accountant from the age of 20 to 30 but was sacked for no reason.
+What a waste of 14 years that was.
+waste of 14 years|waste of fourteen years
+
+How do you get a squirrel to like you?
+Act like a nut
+act like a nut|be a nut
+
+I am terrified of elevators. What should I do?
+Well, I’m going to start taking steps to avoid them.
+take steps
+
+I accidentally drank invisible ink.
+I'm waiting to be seen.
+waiting to be seen
+
+What do you call someone with no body and no nose?
+Nobody knows.
+nobody knows|no body nose|no body knows
+
+Have you heard of my uncle? 
+He always said "when one door closes, another one opens." Great guy, but terrible carpenter
+
+What's the worst thing about ancient history class?
+The teachers tend to Bablyon
+the teachers babylon|the teachers tend to babylon
+
+Why can't eggs have love?
+They break up too soon.
+break up
+`;
+
+
+
+    jokeText = jokeText.split("\n");
+    
+    class Joke {
+      constructor(setup, punchLine, keywords) {
+        this.setup = setup;
+        this.punchLine = punchLine;
+        this.keywords = keywords;
+      }
+    }
+    
+    var jokes = [];
+    
+    for (let i=0; i<jokeText.length; i+=4) {
+      jokes.push(
+        new Joke(
+          jokeText[i],
+          jokeText[i + 1],
+          jokeText[i + 2].split("|"),
+        )
+      );
+    }
+    
+    var phrases = {
+      "dont": [
+        "dont",
+        "don't",
+        "do not",
+        "ain't",
+        "aint"
+      ],
+      "dontKnow": [
+        "idk",
+        "i don't know",
+        "dunno",
+        "i dont know",
+        "idfk",
+      ],
+      "dontCare": [
+        "idc",
+        "i don't care",
+        "i dont care",
+        "idfc"
+      ],
+      "boring": [
+        "you're boring",
+        "you're such a bore",
+        "you are such a bore",
+        "so boring",
+        "you suck",
+        "nobody cares",
+        "you're an idiot",
+      ],
+      "PROFANITY": [
+        "fuck",
+        "shit",
+        "bitch",
+        "wtf",
+        "lmao",
+        "lmfao",
+        "smfh",
+        "nigger",
+        "nigga",
+        "nibba",
+        "chink",
+      ]
+    }
+    
+    var pronouns = {
+      "I": "you",
+      "me": "you",
+      "my": "your",
+      "we": "you",
+      "ourselves": "yourselves",
+      "our": "your",
+      "your": "my",
+      "you": "me",
+    }
+    
+    var sentences = {
+      "complaintResponse": [
+        "Okay, I'll try a different joke.",
+        "Hmm. I should try more material.",
+        "Sorry, I'll try reading more joke books.",
+        "",
+      ],
+      "correctAnswer": [
+        "That's right! Wait, how did you know that one...",
+        "Am I repeating myself? Hmm, I should really work on improv...", 
+        "Correct!",
+        "Haha, you got me...",
+        "Hey, you got it! You know me so well...",
+        "Yep. I must be getting old...",
+        "Huh. Do my jokes have the same flair anymore..?",
+        "Affirmative!",
+        "Hey! Where did you get that joke?",
+        "Uh huh! You must've already heard this joke before...",
+      ],
+      "PROFANITY": [
+        "Language!",
+        "You kiss your mother with that mouth?",
+        "That's a nickel in the curse jar.",
+        "Watch your profanity.",
+        "Don't make me use the soap bar.",
+      ]
+    }
+    
+    var messageContainer = document.getElementsByClassName("container messages")[0];
+    var userInputInput = document.getElementById("userInputInput");
+    var sendButton = document.getElementById("sendMessage");
+    
+    Array.prototype.randomElement = function () {
+      return this[Math.floor(Math.random() * this.length)];
+    }
+    
+    function randomJoke(lastJoke) {
+      var newJoke;
+      do {
+        newJoke = jokes.randomElement();
+      } while (newJoke == lastJoke);
+      
+      return newJoke;
+    }
+    
+    function replacePronoun(uInput) {
+      var convertedText = uInput.split(" ");
+      
+      for (let i in uInput.split(" ")) {
+        if (Object.keys(pronouns).includes(uInput.split(" ")[i])) {
+          console.log("hit", pronouns[uInput.split(" ")[i]]);
+          convertedText[i] = pronouns[uInput.split(" ")[i]];
+        }
+      }
+      
+      return convertedText;
+    }
+    
+    function respond(uInput, lastReply, currentJoke) {
+      var reply = "";
+      uInput = uInput.toLocaleLowerCase();
+      switch (true) {
+        case phrases["PROFANITY"].some(phrase => uInput.includes(phrase)):
+          reply = "Language!";
+          break;
+        case phrases["dontCare"].some(phrase => uInput.includes(phrase)):
+          reply = sentences["complaintResponse"].randomElement()
+          break;
+        case uInput.replace(" ", "").length < 1:
+          reply = "...";
+          break;
+        case currentJoke !== undefined:
+          switch (true) {
+            case (currentJoke.keywords != "" && currentJoke.keywords.some((keyword) => uInput.includes(keyword))):
+              reply = sentences["correctAnswer"].randomElement()
+              break;
+            case (currentJoke.keywords != "" && currentJoke.keywords.some(keyword => uInput.split(" ").some(word => keyword.includes(word)))):
+              reply = "Ooh, so close! " + currentJoke.punchLine;
+              break;
+            case (phrases["dontKnow"].some(phrase => uInput.includes(phrase))):
+              reply = "Don't know? It's " + currentJoke.punchLine;
+              break;
+//            case phrases.dontKnow.some(function (el) {return uInput.includes(el)}):
+//              reply = "Ah, you haven't heard this one before! " + currentJoke.punchLine;
+//              break;
+            default:
+              reply = currentJoke.punchLine;
+          }
+          break;
+        default:
+          reply = currentJoke.punchLine;
+      }
+      
+      return reply;
+    }
+    
+    function newMessage(text, side, pfp) {
+      side = side || "left";
+      
+      var cell = document.createElement("div");
+      cell.setAttribute("class", "message cell " + side);
+      
+      var cellContentDiv = document.createElement("div");
+      cellContentDiv.setAttribute("class", "message content " + side);
+      cellContentDiv.innerText = text;
+      var cellTimestampDiv = document.createElement("div");
+      cellTimestampDiv.setAttribute("class", "message timestamp " + side);
+      var cellPfp = document.createElement("img");
+      cellPfp.setAttribute("class", "message pfp " + side);
+      cellPfp.setAttribute("src", pfp);
+      
+      if (pfp !== undefined) {
+        cell.appendChild(cellPfp);
+      }
+      cell.appendChild(cellContentDiv);
+      //cell.appendChild(cellTimestampDiv);
+      
+      cellTimestampDiv.innerText = new Date().toLocaleString();
+      
+      messageContainer.appendChild(cell);
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+      
+    }
+    
+    var currentJoke = randomJoke(currentJoke);
+    
+    window.onload = function (e) {
+      newMessage(currentJoke.setup, "left");
+    }
+    
+    sendButton.onclick = function (e) {
+      e.preventDefault();
+      
+      let uInputText = userInputInput.value;
+      if (uInputText.replace(" ", "").length > 0) {
+        sendButton.disabled = true;
+        newMessage(uInputText, "right");
+        var response = respond(uInputText, currentJoke.setup, currentJoke);
+        setTimeout(newMessage, 2000, response, "left");
+        
+        userInputInput.value = "";
+        currentJoke = randomJoke(currentJoke);
+        setTimeout(newMessage, 4000, currentJoke.setup, "left");
+        setTimeout(function () {sendButton.disabled = false;}, 4500);
+      }
+    };
+    
+    </script>
+  </body>
+</html>
