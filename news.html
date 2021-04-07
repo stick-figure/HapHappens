@@ -1,0 +1,356 @@
+<html>
+  <head>
+    <title>News - HapHappens | A place where happiness happens</title>
+    
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Chewy');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,900;1,900&display=swap');
+    </style>
+    
+    <style>
+      * {
+        font-family: "Chewy", "Comic Sans MS", "Comic Sans", cursive;
+      }
+      
+      body, html {
+        height: 100%;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        background-color: white;
+      }
+      
+      h1#mainHeader {
+        display: inline-block;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        position: absolute;
+        
+        top: calc(0.5em + 4px);
+        left: 32px;
+        
+        font-size: 3em;
+        font-family: "fira sans", fantasy;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+      
+      h3#mainSubHeader {
+        display: inline-block;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        position: absolute;
+        
+        bottom: 1.5em;
+        right: 32px;
+        
+        letter-spacing: 0.1em;
+      }
+      
+      .to_index {
+        color: black;
+        
+        text-decoration: none;
+      }
+      
+      div.jumbotron {
+        height: 7.5em;
+        
+        padding: 4px;
+        
+        position: relative;
+        
+        background-color: #EFEFEF;
+        
+        border-bottom: 8px solid black;
+      }
+      
+      div.container.nav {
+        position: relative;
+        
+        top: calc(-0.5em - 18px);
+      }
+      
+      ul.nav {
+        margin: 0px;
+        padding: 0px;
+        
+        overflow: hidden;
+        
+        text-align: center;
+        
+        list-style-type: none;
+      }
+      
+      li.nav {
+        display: inline-block;
+        width: calc(20% - 32px);
+      }
+      
+      li.nav a {
+        display: inline-block;
+        
+        width: 75%;
+        
+        margin: 0px;
+        padding: 8px;
+        
+        background-color: #FADE42;
+        color: black;
+        
+        text-align: center;
+        
+        text-decoration: none;
+        
+        border: 3px solid black;
+      }
+      
+      li.nav a.current {
+        background-color: #D8BC20;
+      }
+      
+      .nav.pics {
+        display: none;
+      }
+      
+      li.nav a:active {
+        background-color: #E9CD31;
+      }
+      
+      li.nav a:hover {
+        background-color: #FEED53;
+      }
+      
+      div.caption {
+        width: fit-content;
+        
+        margin: 4px 4px 4px 4px;
+        padding: 8px 8px 8px 8px;
+        
+        position: relative;
+        
+        background-color: #FADE42;
+        
+        text-align: default;
+        
+        box-shadow: 4px 4px;
+        border: 2px solid;
+      }
+      
+      .caption.asdf {
+        top: -100px;
+      }
+      
+      .left {float: left;}
+      .right {float: right;}
+      
+      div.header {
+        min-width: 55%;
+        
+        background-color: #FADE42;
+        
+        font-size: 1.25em;
+        
+        box-shadow: 4px 4px;
+        border: 2px solid;
+      }
+      
+      table.news, tbody.news {
+        width: 100%;
+        table-layout: fixed;
+      }
+      
+      tbody.news tr {
+      }
+      
+      tbody.news tr td {
+      }
+      
+      img.news.s {
+        width: 100%;
+      }
+      
+      .to_top {
+        display: inline-block;
+        
+        width: 50%;
+        
+        margin: 0px;
+        padding: 8px;
+        
+        position: static;
+        
+        bottom: 8px;
+        right: 8px;
+        
+        float: right;
+        
+        z-index: 999999;
+        
+        background-color: #FADE42;
+        color: black;
+        
+        text-align: center;
+        
+        text-decoration: none;
+        
+        border: 3px solid black;
+      }
+      
+      .to_top:hover {
+        background-color: #FEED53;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container content">
+      <div class="container jumbotron">
+        <a class="to_index" href="index.html">
+          <h1 id="mainHeader"   >HapHappens</h1>
+          <h3 id="mainSubHeader">A place where happiness happens</h3>
+        </a>
+      </div>
+      
+      <div class="container nav">
+        <ul class="nav">
+          <li class="nav news"  ><a class="current" href="news.html"  >news</a>  </li>
+          <li class="nav pics"  ><a href="pics.html"  >pics</a>  </li>
+          <li class="nav jokes" ><a href="jokes.html" >jokes</a> </li>
+          <li class="nav events"><a href="events.html">events</a></li>
+          <li class="nav about" ><a href="about.html" >about </a></li>
+        </ul>
+      </div>
+      
+      <div class="container news">
+        <div class="caption header left">Inspiring</div>
+        <br />
+        <table class="news inspiring">
+          <tbody class="news inspiring">
+            <tr>
+              <td colspan="2">
+                <a href="https://www.today.com/food/baltimore-chefs-drive-6-hours-customer-terminal-cancer-t212203"
+                   title="www.today.com - March 18, 2021"
+                   target="_blank">
+                  <img class="news inspiring s" src="good_news4.png"/>
+                </a>
+              </td>
+              
+              <td>
+                <a href="https://www.msn.com/en-us/news/good-news/hero-farm-dog-sounded-alarm-on-fire-at-historic-natick-barn/ar-BB1eGgW5"
+                   title="www.msn.com - March 18, 2021"
+                   target="_blank">
+                  <img class="news inspiring s" src="good_news2.png"/>
+                </a>
+                <br />
+                <a href="https://www.today.com/news/homeless-teacher-gets-help-after-former-student-recognizes-him-t211715"
+                   title="www.today.com - March 14, 2021"
+                   target="_blank">
+                  <img class="news inspiring s" src="good_news3.png"/>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="caption header right">Kids Only</div>
+        
+        <table class="news kids">
+          <tbody class="news kids">
+            <tr>
+              <td>
+                <a href="https://www.msn.com/en-us/news/good-news/foster-child-gets-fairytale-ending-when-teacher-adopts-him/ar-BB1eLPp0"
+                   title="www.msn.com - March 20, 2021"
+                   target="_blank">
+                <img class="news kids s" src="good_news1.png"/>
+                </a>
+              </td>
+              <td>
+                <a href="https://www.goodnewsnetwork.org/jaxson-turner-gives-christmas-gifts-to-homeless-kids/"
+                  title="www.goodnewsnetwork.com - January 3, 2021"
+                  target="_blank">
+                <img class="news kids s" src="good_news5.png"/>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="caption header left">Pet News</div>
+        
+        <table class="news pets">
+          <tbody class="news pets">
+            <tr>
+              <td>
+                <a href="http://www.yahoo.com/lifestyle/black-cat-walking-keyboard-creates-133715159.html"
+                   title="www.yahoo.com - March 19, 2021"
+                   target="_blank">
+                <img class="news pets s" src="good_news8.png"/>
+                </a>
+                <br />
+                <a href="https://www.goodnewsnetwork.org/fevzi-uyar-grandfather-of-homeless-animals-vet/"
+                   title="www.goodnewsnetwork.org - Dec 31, 2020"
+                   target="_blank">
+                  <img class="news pets s" src="good_news13.png"/>
+                </a>
+              </td>
+              <td colspan="3">
+                <a href="https://cdapress.com/news/2021/mar/20/keelys-cookies-benefit-canines-cats/"
+                   title=""
+                   target="_blank">
+                <img class="news pets s" src="good_news10.png"/>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href=""
+                   title=""
+                   target="_blank">
+                <img class="news pets s" src="good_news6.png"/>
+                </a>
+              </td>
+              <td colspan="2">
+                <a href="http://mashable.com/shopping/march-19-barkingmat-smart-dog-training-mat/"
+                   title="mashable.com - March 19, 2021"
+                   target="_blank">
+                <img class="news pets s" src="good_news7.png"/>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="https://www.fayobserver.com/story/news/2021/03/18/new-fayetteville-nonprofit-rescues-cats-emotional-support-pets/6919072002/"
+                   title="www.fayobserver.com - March 18, 2021"
+                   target="_blank">
+                <img class="news pets s" src="good_news9.png"/>
+                </a>
+              </td>
+              <td colspan="2">
+                <a href="https://www.goodnewsnetwork.org/sisu-dog-unicorn-toy-rescue-duplin-north-carolina/"
+                   title="www.goodnewsnetwork.org - March 31, 2021"
+                   target="_blank">
+                  <img class="news pets s" src="good_news11.png"/>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      
+      <a class="to_top" href="#">To Top</a>
+      
+    </div>
+  </body>
+</html>
