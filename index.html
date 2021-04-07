@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <title>HapHappens | A place where happiness happens</title>
+    
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Chewy');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,900;1,900&display=swap');
+    </style>
+    
+    <style>
+      * {
+        font-family: "Chewy", "Comic Sans MS", "Comic Sans", cursive;
+      }
+      
+      body, html {
+        height: 100%;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        background-color: white;
+      }
+      
+      h1#mainHeader {
+        display: inline-block;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        position: absolute;
+        
+        top: calc(0.5em + 4px);
+        left: 32px;
+        
+        font-size: 3em;
+        font-family: "Fira Sans", fantasy;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+      
+      h3#mainSubHeader {
+        display: inline-block;
+        
+        margin: 0px;
+        padding: 0px;
+        
+        position: absolute;
+        
+        bottom: 1.5em;
+        right: 32px;
+        
+        letter-spacing: 0.1em;
+      }
+      
+      .to_index {
+        color: black;
+        
+        text-decoration: none;
+      }
+      
+      div.jumbotron {
+        height: 7.5em;
+        
+        padding: 4px;
+        
+        position: relative;
+        
+        background-color: #EFEFEF;
+        
+        border-bottom: 8px solid black;
+      }
+      
+      div.container.nav {
+        position: relative;
+        
+        top: calc(-0.5em - 18px);
+      }
+      
+      ul.nav {
+        margin: 0px;
+        padding: 0px;
+        
+        overflow: hidden;
+        
+        text-align: center;
+        
+        list-style-type: none;
+      }
+      
+      li.nav {
+        display: inline-block;
+        width: calc(20% - 32px);
+      }
+      
+      li.nav a {
+        display: inline-block;
+        
+        width: 75%;
+        
+        margin: 0px;
+        padding: 8px;
+        
+        background-color: #FADE42;
+        color: black;
+        
+        text-align: center;
+        
+        text-decoration: none;
+        
+        border: 3px solid black;
+      }
+      
+      li.nav a.current {
+        background-color: #EFEFEF;
+      }
+      
+      li.nav a:active {
+        background-color: #E9CD31;
+      }
+      
+      li.nav a:hover {
+        background-color: #FEED53;
+      }
+      
+      div.caption {
+        width: fit-content;
+        
+        margin: 4px 4px 4px 4px;
+        padding: 8px 8px 8px 8px;
+        
+        position: relative;
+        
+        background-color: #FADE42;
+        
+        text-align: default;
+        
+        box-shadow: 4px 4px;
+        border: 2px solid;
+      }
+      
+      .caption.asdf {
+        top: -100px;
+      }
+      
+      .left {float: left;}
+      .right {float: right;}
+      
+      div.header {
+        min-width: 55%;
+        
+        background-color: #FADE42;
+        
+        font-size: 1.25em;
+        
+        box-shadow: 4px 4px;
+        border: 2px solid;
+      }
+      
+      table.news, tbody.news {
+        width: 100%;
+        table-layout: fixed;
+      }
+      
+      .container.news {
+        display: inline-block;
+        
+        width: 50%;
+      }
+      
+      .container.jokes {
+        display: inline-block;
+        
+        width: 40%;
+        
+        float: right;
+      }
+      
+      img.news.s {
+        width: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container content">
+      <div class="container jumbotron">
+        <h1 id="mainHeader"   >HapHappens</h1>
+        <h3 id="mainSubHeader">A place where happiness happens</h3>
+      </div>
+      
+      <div class="container nav">
+        <ul class="nav">
+          <li class="nav news"  ><a href="news.html"  >news</a>  </li>
+<!--          <li class="nav pics"  ><a href="pics.html"  >pics</a>  </li> -->
+          <li class="nav jokes" ><a href="jokes.html" >jokes</a> </li>
+          <li class="nav events"><a href="events.html">events</a></li>
+          <li class="nav about" ><a href="about.html" >about </a></li>
+        </ul>
+      </div>
+      
+      <div class="container news">
+        <div class="caption header left">Latest good news</div>
+        <br />
+        <a href="https://www.today.com/food/baltimore-chefs-drive-6-hours-customer-terminal-cancer-t212203"
+           title="www.today.com - March 18, 2021">
+          <img class="news latest s" src="good_news4.png" alt= "These Baltimore chefs drove 6 hours to cook a dying customer her favorite dish"/>
+        </a>
+        <br />
+        <a href="https://www.msn.com/en-us/news/good-news/hero-farm-dog-sounded-alarm-on-fire-at-historic-natick-barn/ar-BB1eGgW5">
+          <img class="news latest s" src="good_news2.png"/>
+        </a>
+      </div>
+      <div class="container jokes">
+        <div class="caption header left">asdfghjkl</div>
+        <br />
+        <a href="">
+          <img class="news latest s" src="good_news1.png"/>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
